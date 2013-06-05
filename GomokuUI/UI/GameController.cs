@@ -8,47 +8,14 @@ using System.Threading;
 
 namespace GomokuUI.UI
 {
-    public enum PlayerType
-    {
-        HumanPlayer,
-        ComputerPlayer,
-    }
-
-    public class Player
-    {
-        public PlayerType PlayerType
-        {
-            set;get;
-        }
-
-        public bool IsMax
-        {
-            set;get;
-        }
-    }
-    
     public class GameController
     {
-        private GomokuBoard board;
-        private Minimax stragyController;
-        private GenerateBehavior generateBehavior;
-        private EvaluateBehavior evaluateBehavior;
-        private int minimaxDepth;
-
-        public Player Player1
-        {
-            private set;get;
-        }
-
-        public Player Player2
-        {
-            private set;get;
-        }
-
         public static GameController Current
         {
             set;get;
         }
+
+        private GomokuBoard board;
 
         public GameController(GomokuBoard board)
         {
@@ -58,64 +25,54 @@ namespace GomokuUI.UI
             this.board = board;
         }
 
-        public void CreateGameSession(int rowCount, int columnCount, int depth, Player player1, Player player2)
+        private Player[] players = new Player[2];
+        private int currentPlayerIndex = -1;
+
+        public void CreateGameSession(int rowCount, int columnCount, Player player1, Player player2)
         {
-            this.minimaxDepth = depth;
-
             this.board.InitializeBoard(rowCount, columnCount);
-            generateBehavior = new MyGenerate();
-            evaluateBehavior = new MyEvaluateV2(new int[rowCount, columnCount]);
 
-            this.stragyController = new Minimax(generateBehavior, evaluateBehavior);
+            this.players[0] = player1;
+            this.players[1] = player2;
 
-            this.Player1 = player1;
-            this.Player2 = player2;
+            players[0].ThinkCompleted += OnPlayerThinkCompleted;
+            players[1].ThinkCompleted += OnPlayerThinkCompleted;
 
-            SetCurrentPlayer(Player1);
+            NextTurn();
         }
 
-        private Player currentPlayer;
-        private void SetCurrentPlayer(Player player)
+        private void NextTurn()
         {
-            this.currentPlayer = player;
-
-            if (currentPlayer.PlayerType == PlayerType.HumanPlayer)
-            {
-                board.AllowClick = true;
-            }
+            if (currentPlayerIndex != 0)
+                currentPlayerIndex = 0;
             else
-            {
-                board.AllowClick = false;
-                
-                BackgroundWorker aiWorker = new BackgroundWorker();
+                currentPlayerIndex = 1;
 
-                aiWorker.DoWork += OnAIThinking;
-                aiWorker.RunWorkerCompleted += OnAIThinkCompleted;
-                aiWorker.RunWorkerAsync(currentPlayer);
+            Player currentPlayer = players[currentPlayerIndex];
+
+            if (currentPlayer is HumanPlayer)
+                board.AllowClick = true;
+            else
+                board.AllowClick = false;
+
+            currentPlayer.GetTurn(board.Matrix);
+        }
+
+        public Player CurrentTurn
+        {
+            get
+            {
+                return players[currentPlayerIndex];
             }
+        }
+
+        private void OnPlayerThinkCompleted(object sender, ThinkCompletedEventArgs e)
+        {
+            int[,] matrix = e.BoardMatrix;
+            board.ApplyMatrix(matrix);
+            NextTurn();
         }
 
         
-        private void OnAIThinking(object sender, DoWorkEventArgs e)
-        {
-            Thread.Sleep(2000);
-            Player current = e.Argument as Player;
-
-            if (current.IsMax)
-                stragyController.Max_AlphaBeta(board.Matrix, 3, int.MaxValue);
-            else
-                stragyController.Min_AlphaBeta(board.Matrix, 2, int.MinValue);
-        }
-
-        private void OnAIThinkCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            int[,] newMatrix = stragyController.getBestState();
-            board.ApplyMatrix(newMatrix);
-
-            if (currentPlayer == Player1)
-                SetCurrentPlayer(Player2);
-            else
-                SetCurrentPlayer(Player1);
-        }
     }
 }

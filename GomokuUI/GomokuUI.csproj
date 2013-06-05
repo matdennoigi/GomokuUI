@@ -78,6 +78,13 @@
     <Compile Include="UI\NumericTextbox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\Player.cs" />
+    <Compile Include="UI\PlayerInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerInfoControl.Designer.cs">
+      <DependentUpon>PlayerInfoControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ThinkingDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerInfoControl.resx">
+      <DependentUpon>PlayerInfoControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ThinkingDialog.resx">
       <DependentUpon>ThinkingDialog.cs</DependentUpon>

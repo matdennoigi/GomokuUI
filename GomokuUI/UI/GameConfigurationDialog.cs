@@ -31,6 +31,18 @@ namespace GomokuUI.UI
             get;
         }
 
+        public PlayerInfo Player1Info
+        {
+            private set;
+            get;
+        }
+
+        public PlayerInfo Player2Info
+        {
+            private set;
+            get;
+        }
+
         private bool VerifyInput()
         {
             try
@@ -43,6 +55,12 @@ namespace GomokuUI.UI
 
                 RowCount = rowCount;
                 ColumnCount = columnCount;
+
+                if (playerInfo1.PlayerInfo == null || playerInfo2.PlayerInfo == null)
+                    return false;
+
+                this.Player1Info = playerInfo1.PlayerInfo;
+                this.Player2Info = playerInfo2.PlayerInfo;
 
                 return true;
             }
