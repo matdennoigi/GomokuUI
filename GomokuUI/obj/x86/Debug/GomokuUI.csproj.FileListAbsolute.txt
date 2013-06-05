@@ -1,0 +1,24 @@
+c:\users\dell\documents\visual studio 2010\Projects\GomokuUI\GomokuUI\bin\Debug\GomokuUI.exe
+c:\users\dell\documents\visual studio 2010\Projects\GomokuUI\GomokuUI\bin\Debug\GomokuUI.pdb
+c:\users\dell\documents\visual studio 2010\Projects\GomokuUI\GomokuUI\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\dell\documents\visual studio 2010\Projects\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.Properties.Resources.resources
+c:\users\dell\documents\visual studio 2010\Projects\GomokuUI\GomokuUI\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\dell\documents\visual studio 2010\Projects\GomokuUI\GomokuUI\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\dell\documents\visual studio 2010\Projects\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.exe
+c:\users\dell\documents\visual studio 2010\Projects\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.pdb
+c:\users\dell\documents\visual studio 2010\Projects\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.UI.GomokuBoard.resources
+c:\users\dell\documents\visual studio 2010\Projects\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.UI.MainForm.resources
+c:\users\dell\documents\visual studio 2010\Projects\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.UI.GameConfigurationDialog.resources
+C:\Users\dell\Documents\Visual Studio 2010\Projects\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.UI.ThinkingDialog.resources
+C:\Users\dell\Desktop\GomokuUI\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.exe
+C:\Users\dell\Desktop\GomokuUI\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.pdb
+C:\Users\dell\Desktop\GomokuUI\GomokuUI\GomokuUI\bin\Debug\GomokuUI.exe
+C:\Users\dell\Desktop\GomokuUI\GomokuUI\GomokuUI\bin\Debug\GomokuUI.pdb
+C:\Users\dell\Desktop\GomokuUI\GomokuUI\GomokuUI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\dell\Desktop\GomokuUI\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.Properties.Resources.resources
+C:\Users\dell\Desktop\GomokuUI\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.UI.GameConfigurationDialog.resources
+C:\Users\dell\Desktop\GomokuUI\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.UI.GomokuBoard.resources
+C:\Users\dell\Desktop\GomokuUI\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.UI.MainForm.resources
+C:\Users\dell\Desktop\GomokuUI\GomokuUI\GomokuUI\obj\x86\Debug\GomokuUI.UI.ThinkingDialog.resources
+C:\Users\dell\Desktop\GomokuUI\GomokuUI\GomokuUI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\dell\Desktop\GomokuUI\GomokuUI\GomokuUI\obj\x86\Debug\GenerateResource.write.1.tlog
